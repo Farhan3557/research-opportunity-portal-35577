@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "Research Opportunity Portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "id", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "1. Create Opportunity (1)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/opportunities",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Deep Learning for Medical Imaging\",\n  \"description\": \"Build models to detect diseases from X-ray images.\",\n  \"researchArea\": \"Artificial Intelligence\",\n  \"facultyName\": \"Dr. Ahmed Khan\",\n  \"department\": \"Computer Science\",\n  \"requiredSkills\": \"Python, PyTorch\",\n  \"positions\": 2,\n  \"deadline\": \"2026-12-31\",\n  \"status\": \"Open\"\n}"
+        }
+      }
+    },
+    {
+      "name": "2. Create Opportunity (2)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/opportunities",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Smart Grid Energy Optimization\",\n  \"description\": \"Optimize power distribution using data analytics.\",\n  \"researchArea\": \"Power Systems\",\n  \"facultyName\": \"Dr. Sara Malik\",\n  \"department\": \"Electrical Engineering\",\n  \"requiredSkills\": \"MATLAB, Data Analysis\",\n  \"positions\": 3,\n  \"deadline\": \"2026-11-30\",\n  \"status\": \"Open\"\n}"
+        }
+      }
+    },
+    {
+      "name": "3. Create Opportunity (3)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/opportunities",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Secure Web Applications\",\n  \"description\": \"Study common web vulnerabilities and build defenses.\",\n  \"researchArea\": \"Cyber Security\",\n  \"facultyName\": \"Dr. Usman Ali\",\n  \"department\": \"Software Engineering\",\n  \"requiredSkills\": \"JavaScript, Networking\",\n  \"positions\": 1,\n  \"deadline\": \"2027-01-15\",\n  \"status\": \"Open\"\n}"
+        }
+      }
+    },
+    {
+      "name": "4. Get All Opportunities",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/opportunities" }
+    },
+    {
+      "name": "5. Get One Opportunity",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/opportunities/{{id}}" }
+    },
+    {
+      "name": "6. Update Opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/opportunities/{{id}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Deep Learning for Medical Imaging (Updated)\",\n  \"requiredSkills\": \"Python, PyTorch, OpenCV\",\n  \"positions\": 4,\n  \"deadline\": \"2027-01-31\"\n}"
+        }
+      }
+    },
+    {
+      "name": "7. Close Opportunity (Open to Closed)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/opportunities/{{id}}",
+        "body": { "mode": "raw", "raw": "{\n  \"status\": \"Closed\"\n}" }
+      }
+    },
+    {
+      "name": "8. Delete Opportunity",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/api/opportunities/{{id}}" }
+    },
+    {
+      "name": "9. Get Deleted Opportunity (404)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/opportunities/{{id}}" }
+    },
+    {
+      "name": "10. Create With Invalid Data (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/opportunities",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"\",\n  \"positions\": -5\n}"
+        }
+      }
+    }
+  ]
+}
