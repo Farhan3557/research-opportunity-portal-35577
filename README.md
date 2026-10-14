@@ -6,7 +6,7 @@ A web app where faculty can post and manage research opportunities.
 - **Database:** MySQL
 - **Frontend:** HTML + Bootstrap + JavaScript (served by the backend)
 
-GitHub Repository: https://github.com/username/research-opportunity-portal
+GitHub Repository: https://github.com/Farhan3557/research-opportunity-portal-35577.git
 
 ## Project Structure
 
